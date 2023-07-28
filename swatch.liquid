@@ -56,7 +56,7 @@
         <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
         {% if is_color %}
         
-        <label for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color:var(--{{ value | split: ' ' | last | handle | downcase }});">
+        <label for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color:{{ value | split: ' ' | last | handle | downcase }};">
           <span>{{ value }}</span>
         </label>
         {% else %}
